@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="testcases.Task2AmazonTests">
+        <methods>
+          <include name="AmazonPayment"/>
+          <include name="InitialSetUp"/>
+        </methods>
+      </class> <!-- testcases.Task2AmazonTests -->
+      <class name="testcases.Task7AmazonAddProductVerify">
+        <methods>
+          <include name="loginAndVerifyUsername"/>
+          <include name="addProductsAndVerifyPrice"/>
+          <include name="InitialSetUp"/>
+        </methods>
+      </class> <!-- testcases.Task7AmazonAddProductVerify -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
