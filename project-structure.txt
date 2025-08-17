@@ -1,0 +1,220 @@
+Folder PATH listing
+Volume serial number is 70F2-8C4C
+C:.
+¦   .classpath
+¦   .project
+¦   pom.xml
+¦   practice.xml
+¦   project-structure.txt
+¦   Report.docx
+¦   testng.xml
+¦   
++---.settings
+¦       org.eclipse.core.resources.prefs
+¦       org.eclipse.jdt.core.prefs
+¦       org.eclipse.m2e.core.prefs
+¦       
++---src
+¦   +---main
+¦   ¦   +---java
+¦   ¦       +---Amazon
+¦   ¦       ¦   +---NullClassAmazonProject
+¦   ¦       ¦           App.java
+¦   ¦       ¦           
+¦   ¦       +---base
+¦   ¦       ¦       TestBase.java
+¦   ¦       ¦       
+¦   ¦       +---config
+¦   ¦       ¦       config.properties
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       AmazonGoToCartPage.java
+¦   ¦       ¦       AmazonHomePage.java
+¦   ¦       ¦       AmazonLoginPage.java
+¦   ¦       ¦       AmazonPaymentPage.java
+¦   ¦       ¦       AmazonPopupHandler.java
+¦   ¦       ¦       AmazonProductDetailsPage.java
+¦   ¦       ¦       AmazonProductFilterPage.java
+¦   ¦       ¦       AmazonProductPage.java
+¦   ¦       ¦       AmazonProfilePage.java
+¦   ¦       ¦       AmazonSearchProductsPage.java
+¦   ¦       ¦       AmazonShoppingCartPage.java
+¦   ¦       ¦       AmazonValidProductAndVerifyPage.java
+¦   ¦       ¦       TimeValidator.java
+¦   ¦       ¦       VerifyAmazonPaymentPage.java
+¦   ¦       ¦       
+¦   ¦       +---util
+¦   ¦               ConfigReader.java
+¦   ¦               EmailSender.java
+¦   ¦               ScreenshotUtil.java
+¦   ¦               
+¦   +---test
+¦       +---java
+¦           +---Amazon
+¦           ¦   +---NullClassAmazonProject
+¦           ¦           AppTest.java
+¦           ¦           
+¦           +---testcases
+¦                   AmazonLoginTest.java
+¦                   AmazonPaymentTest.java
+¦                   AmazonProductDetailsTest.java
+¦                   AmazonSearchProductsTest.java
+¦                   AmazonShoppingCartTest.java
+¦                   Task1.docx
+¦                   Task2AmazonTests.java
+¦                   Task3MonitorPriceChangeTest.java
+¦                   Task4AmazonProductFilterTest.java
+¦                   Task5AmazonUserProfileTest.java
+¦                   Task6AmazonValidProductAndVerifyTest.java
+¦                   Task7AmazonAddProductVerify.java
+¦                   
++---target
+¦   +---classes
+¦   ¦   +---Amazon
+¦   ¦   ¦   +---NullClassAmazonProject
+¦   ¦   ¦           App.class
+¦   ¦   ¦           
+¦   ¦   +---base
+¦   ¦   ¦       TestBase.class
+¦   ¦   ¦       
+¦   ¦   +---config
+¦   ¦   ¦       config.properties
+¦   ¦   ¦       
+¦   ¦   +---META-INF
+¦   ¦   ¦   ¦   MANIFEST.MF
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---maven
+¦   ¦   ¦       +---Amazon
+¦   ¦   ¦           +---NullClassAmazonProject
+¦   ¦   ¦                   pom.properties
+¦   ¦   ¦                   pom.xml
+¦   ¦   ¦                   
+¦   ¦   +---pages
+¦   ¦   ¦       AmazonGoToCartPage.class
+¦   ¦   ¦       AmazonHomePage.class
+¦   ¦   ¦       AmazonLoginPage.class
+¦   ¦   ¦       AmazonPaymentPage.class
+¦   ¦   ¦       AmazonPopupHandler.class
+¦   ¦   ¦       AmazonProductDetailsPage.class
+¦   ¦   ¦       AmazonProductFilterPage.class
+¦   ¦   ¦       AmazonProductPage.class
+¦   ¦   ¦       AmazonProfilePage.class
+¦   ¦   ¦       AmazonSearchProductsPage.class
+¦   ¦   ¦       AmazonShoppingCartPage.class
+¦   ¦   ¦       AmazonValidProductAndVerifyPage.class
+¦   ¦   ¦       TimeValidator.class
+¦   ¦   ¦       VerifyAmazonPaymentPage.class
+¦   ¦   ¦       
+¦   ¦   +---util
+¦   ¦           ConfigReader.class
+¦   ¦           EmailSender$1.class
+¦   ¦           EmailSender.class
+¦   ¦           ScreenshotUtil.class
+¦   ¦           
+¦   +---test-classes
+¦       +---Amazon
+¦       ¦   +---NullClassAmazonProject
+¦       ¦           AppTest.class
+¦       ¦           
+¦       +---testcases
+¦               AmazonLoginTest.class
+¦               AmazonPaymentTest.class
+¦               AmazonProductDetailsTest.class
+¦               AmazonSearchProductsTest.class
+¦               AmazonShoppingCartTest.class
+¦               Task1.docx
+¦               Task2AmazonTests.class
+¦               Task3MonitorPriceChangeTest.class
+¦               Task4AmazonProductFilterTest.class
+¦               Task5AmazonUserProfileTest.class
+¦               Task6AmazonValidProductAndVerifyTest.class
+¦               Task7AmazonAddProductVerify.class
+¦               
++---test-output
+    ¦   bullet_point.png
+    ¦   collapseall.gif
+    ¦   emailable-report.html
+    ¦   failed.png
+    ¦   index.html
+    ¦   jquery.min.js
+    ¦   navigator-bullet.png
+    ¦   passed.png
+    ¦   skipped.png
+    ¦   testng-failed.xml
+    ¦   testng-reports.css
+    ¦   testng-reports.js
+    ¦   testng-reports1.css
+    ¦   testng-reports2.js
+    ¦   testng-results.xml
+    ¦   testng.css
+    ¦   
+    +---Default suite
+    ¦       Default test.html
+    ¦       Default test.xml
+    ¦       testng-failed.xml
+    ¦       
+    +---junitreports
+    ¦       TEST-testcases.AmazonLoginTest.xml
+    ¦       TEST-testcases.AmazonPaymentTest.xml
+    ¦       TEST-testcases.AmazonProductDetailsTest.xml
+    ¦       TEST-testcases.AmazonSearchProductsTest.xml
+    ¦       TEST-testcases.AmazonShoppingCartTest.xml
+    ¦       TEST-testcases.Task2AmazonTests.xml
+    ¦       TEST-testcases.Task3MonitorPriceChangeTest.xml
+    ¦       TEST-testcases.Task4AmazonProductFilterTest.xml
+    ¦       TEST-testcases.Task5AmazonUserProfileTest.xml
+    ¦       TEST-testcases.Task6AmazonValidProductAndVerifyTest.xml
+    ¦       TEST-testcases.Task7AmazonAddProductVerify.xml
+    ¦       
+    +---old
+    ¦   ¦   index.html
+    ¦   ¦   
+    ¦   +---Default suite
+    ¦   ¦       classes.html
+    ¦   ¦       Default test.properties
+    ¦   ¦       groups.html
+    ¦   ¦       index.html
+    ¦   ¦       main.html
+    ¦   ¦       methods-alphabetical.html
+    ¦   ¦       methods-not-run.html
+    ¦   ¦       methods.html
+    ¦   ¦       reporter-output.html
+    ¦   ¦       testng.xml.html
+    ¦   ¦       toc.html
+    ¦   ¦       
+    ¦   +---PracticeSuite
+    ¦   ¦       classes.html
+    ¦   ¦       groups.html
+    ¦   ¦       index.html
+    ¦   ¦       main.html
+    ¦   ¦       methods-alphabetical.html
+    ¦   ¦       methods-not-run.html
+    ¦   ¦       methods.html
+    ¦   ¦       reporter-output.html
+    ¦   ¦       Test.properties
+    ¦   ¦       testng.xml.html
+    ¦   ¦       toc.html
+    ¦   ¦       
+    ¦   +---Suite
+    ¦           classes.html
+    ¦           groups.html
+    ¦           index.html
+    ¦           main.html
+    ¦           methods-alphabetical.html
+    ¦           methods-not-run.html
+    ¦           methods.html
+    ¦           reporter-output.html
+    ¦           Test.properties
+    ¦           testng.xml.html
+    ¦           toc.html
+    ¦           
+    +---PracticeSuite
+    ¦       Test.html
+    ¦       Test.xml
+    ¦       testng-failed.xml
+    ¦       
+    +---Suite
+            Test.html
+            Test.xml
+            testng-failed.xml
+            

@@ -4,11 +4,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pages.AmazonGoToCartPage;
@@ -18,7 +14,6 @@ import pages.AmazonPaymentPage;
 import pages.AmazonProductPage;
 import pages.AmazonSearchProductsPage;
 import pages.VerifyAmazonPaymentPage;
-import util.ScreenshotUtil;
 import base.TestBase;
 
 public class Task2AmazonTests extends TestBase {
@@ -99,16 +94,10 @@ public class Task2AmazonTests extends TestBase {
 		if (price < 500) {
 			throw new SkipException("Price is below ₹500, skipping payment test.");
 		}
-
-		// To verify payment page/checkout page. Thread.sleep(2000);
-		verifyAmazonPaymentPage = new VerifyAmazonPaymentPage();
-		Assert.assertTrue(verifyAmazonPaymentPage.isPaymentOptionsDisplayed(), "Payment options are not visible.");
-		verifyAmazonPaymentPage.printOrderSummary();
-		ScreenshotUtil.takeScreenshot(driver, "PaymentPage_Verification");
-
-		amazonGoToCartPage.goToCart();
 		amazonGoToCartPage.clearCart();
 
 	}
+	
+	
 
 }

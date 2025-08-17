@@ -30,6 +30,7 @@ public class AmazonLoginPage extends TestBase {
 		driver.findElement(logIn).click();
 		driver.findElement(By.id("ap_email_login")).sendKeys(user);
 		driver.findElement(continueButton).click();
+		driver.get(driver.getCurrentUrl());
 		driver.findElement(By.id("ap_password")).sendKeys(password);
 		driver.findElement(signIn).click();
 
@@ -43,9 +44,9 @@ public class AmazonLoginPage extends TestBase {
 	}
 	
 	public String getLoggedInUsername() {
-		driver.findElement(By.xpath("//button[@aria-label='Expand Account and Lists']")).click();
-		driver.findElement(By.xpath("//*[@id=\"nav-link-accountList\"]/button")).click();
-		WebElement user = driver.findElement(By.xpath("//div[contains(@class, 'profile-detail-primary')]"));
+		driver.findElement(By.xpath("//*[contains(text(), 'Account & Lists')]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Login & security')]")).click();
+		WebElement user = driver.findElement(By.id("NAME_SUBTITLE"));
 		return user.getText().trim().replaceAll("\\s+", "");
 	}
 

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import base.TestBase;
 
 public class AmazonSearchProductsPage extends TestBase {
-	@FindBy(xpath = "//span[contains(text(),'ZEBRONICS Astra 35, Portable Bluetooth Speaker, 16')]")
+	@FindBy(xpath = "//span[contains(text(),'Noise Diva 2 Fashion Smart Watch for Women - Sleekest Dial, 36mm AMOLED Display')]")
 	WebElement searchedProductsPageLabel;
 
 	// Create instance for WebDriverWait

@@ -25,7 +25,7 @@ public class AmazonPaymentPage extends TestBase {
 	}
 
 	public double getSubTotalBeforePayment() {
-		WebElement price = driver.findElement(By.xpath("//*[@id='subtotals-marketplace-table']/tbody/tr[5]/td[2]"));
+		WebElement price = driver.findElement(By.xpath("//td[@class='a-color-base a-size-medium a-text-right grand-total-price aok-nowrap a-text-bold a-nowrap']"));
 		String priceText = price.getText().replace("₹", "").replace(",", "").trim();
 		return Double.parseDouble(priceText);
 	}
@@ -44,5 +44,6 @@ public class AmazonPaymentPage extends TestBase {
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='checkout-primary-continue-button-id']/span/input")));
 		System.out.println(driver.findElement(By.xpath("//*[@id='checkout-primary-continue-button-id']/span/input")).getText());
 		driver.findElement(By.xpath("//*[@id='checkout-primary-continue-button-id']/span/input")).click();
+		ScreenshotUtil.takeScreenshot(driver, "Payment");
 	}
 }

@@ -32,6 +32,7 @@ public class AmazonSearchProductsTest extends TestBase {
 	amazonHomePage.clickOnSearchButton(); 
 	Thread.sleep(2000); 
 	String productLabel = amazonSearchProductsPage.getPageLabelForSearchedProduct();
+	System.out.println(productLabel);
 	Assert.assertNotEquals(amazonSearchProductsPage.getPageLabelForSearchedProduct(), "Search Result not Found");
 	System.out.println("ProductLabel=" + productLabel);
 	amazonSearchProductsPage.clickOnProduct();

@@ -1,16 +1,8 @@
 package base;
-
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
-
 import util.ConfigReader;
-
 public class TestBase {
 
 	protected static WebDriver driver = null;
@@ -19,8 +11,6 @@ public class TestBase {
 	public TestBase() {
 		config = new ConfigReader();
 	}
-
-
 	public static void initialization() {
 		String browserName = config.getProperty("browser");
 		if (browserName.equals("chrome")) {
@@ -32,7 +22,6 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
 		driver.get(config.getProperty("baseURL"));
 	}
-
 	public static WebDriver getdriver() {
 		// TODO Auto-generated method stub
 		if (driver == null) {

@@ -16,7 +16,7 @@ public class Task3MonitorPriceChangeTest extends TestBase{
 	final String productUrl = "https://www.amazon.in/dp/B0D6Y7Y3N3?th=1"; // Example URL
     final double priceThreshold = 63901.00;
 	
-	@BeforeClass
+	@BeforeMethod
 	public void intialSetUp() throws InterruptedException{
 		//initialization();
 		System.out.println("Task 3");
@@ -27,7 +27,8 @@ public class Task3MonitorPriceChangeTest extends TestBase{
 	}
 	
 	@Test
-	public void checkPriceAndNotify() {
+	public void checkPriceAndNotify() throws InterruptedException {
+		Thread.sleep(2000);
 		double price=productPage.getProductPrice();
 		System.out.println("Current Price: ₹" + price);
 		

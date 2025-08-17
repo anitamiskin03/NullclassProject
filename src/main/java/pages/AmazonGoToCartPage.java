@@ -17,7 +17,7 @@ public class AmazonGoToCartPage extends TestBase {
 	WebDriverWait wait = new WebDriverWait(getdriver(), Duration.ofSeconds(10));
 
 	public void goToCart() {
-		driver.findElement(By.xpath("//span[contains(text(),'Cart')]")).click();
+		driver.findElement(By.id("nav-cart-count-container")).click();
 		// ScreenshotUtil.takeScreenshot(driver, "CartPage");
 	}
 
@@ -32,50 +32,32 @@ public class AmazonGoToCartPage extends TestBase {
 		return total;
 	}
 
-	public void clearCart(){
-		
-		  try { // Wait until cart is loaded
-		  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(
-		  "sc-active-cart")));
-		  
-		  // Loop until cart is empty
-		  while (true) { List<WebElement> deleteButtons =
-		  driver.findElements(By.xpath("//input[@value='Delete']"));
-		  
-		  if (deleteButtons.isEmpty()) { System.out.println("Cart is already empty!");
-		  break; }
-		  
-		  // Click first delete button 
-		  deleteButtons.get(0).click();
-		  
-		  // Wait for cart update after deletion
-		  wait.until(ExpectedConditions.stalenessOf(deleteButtons.get(0)));
-		  Thread.sleep(1000); // small buffer for animation 
-		  }
-		  
-		  System.out.println("Cart cleared successfully!");
-		  
-		  } catch (Exception e) { System.out.println("Error while clearing cart: " +
-		  e.getMessage()); }
-		 
+	public void clearCart() throws TimeoutException, InterruptedException {
+		driver.findElement(By.id("nav-logo-sprites")).click();
+		driver.findElement(By.id("nav-cart-count-container")).click();
+		List<WebElement> deleteButtons = driver.findElements(By.xpath("//input[@value='Delete']"));
+		System.out.println(deleteButtons.size());
+		while (!deleteButtons.isEmpty()) {
 
-		/*
-		 * try { List<WebElement> deleteButtons = driver .findElements(By.
-		 * xpath("//input[@value='Delete' or contains(@aria-label, 'Delete')]"));
-		 * 
-		 * while (!deleteButtons.isEmpty()) { for (WebElement deleteBtn : deleteButtons)
-		 * { // deleteBtn.click();
-		 * wait.until(ExpectedConditions.elementToBeClickable(deleteBtn)).click(); //
-		 * After deletion, break to re-fetch the updated list break; } //
-		 * deleteButtons=driver.findElements(By.xpath("//input[@value='Delete' or //
-		 * contains(@aria-label, 'Delete')]"));
-		 * 
-		 * // Wait and re-fetch the list after one item is removed
-		 * wait.until(ExpectedConditions.invisibilityOfAllElements(
-		 * driver.findElements(By.xpath("//input[@value='Delete'")))); } } catch
-		 * (Exception e) { System.out.println("Error while clearing cart: " +
-		 * e.getMessage()); }
-		 */
+			for (WebElement deleteBtn : deleteButtons) {
+				wait.until(ExpectedConditions.elementToBeClickable(deleteBtn)).click();
+				break;
+			}
+
+			// Wait and re-fetch the list after one item is removed
+			if (deleteButtons.size() == 1)
+				break;
+			else {
+				String refresh = driver.getCurrentUrl();
+				driver.get(refresh);
+
+				Thread.sleep(2000);
+				// wait.until(ExpectedConditions
+				// .visibilityOfAllElements(driver.findElements(By.xpath("//input[@value='Delete']"))));
+				deleteButtons = driver.findElements(By.xpath("//input[@value='Delete']"));
+			}
+
+		}
 
 	}
 }

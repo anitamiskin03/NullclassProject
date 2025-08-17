@@ -48,6 +48,7 @@ public class Task5AmazonUserProfileTest extends TestBase {
 	public void validateProfileAndNameCharacters() {
 
 		amazonLoginPage.goToYourAccount();
+		
 		driver.findElement(By.xpath("//*[contains(text(), 'Login & security')]")).click();
 		AmazonProfilePage amazonProfilePage = new AmazonProfilePage(driver);
 

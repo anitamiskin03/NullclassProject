@@ -1,32 +1,17 @@
 package testcases;
 
-import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.TestBase;
 import pages.AmazonGoToCartPage;
 import pages.AmazonHomePage;
 import pages.AmazonLoginPage;
-import pages.AmazonPopupHandler;
 import pages.AmazonProductPage;
-import pages.AmazonProfilePage;
 import pages.AmazonSearchProductsPage;
-import pages.TimeValidator;
-import util.ConfigReader;
 
 public class Task7AmazonAddProductVerify extends TestBase {
 	AmazonHomePage amazonHomePage;
@@ -34,7 +19,6 @@ public class Task7AmazonAddProductVerify extends TestBase {
 	AmazonSearchProductsPage amazonSearchProductsPage;
 	AmazonProductPage product;
 	AmazonGoToCartPage amazonGoToCartPage;
-	
 
 	@BeforeClass
 	public void InitialSetUp() throws InterruptedException {
@@ -44,13 +28,13 @@ public class Task7AmazonAddProductVerify extends TestBase {
 		 * if (!TimeValidator.isWithinAllowedTimeWindow(18, 19)) { throw new
 		 * SkipException("Test skipped: Current time not within 6 PM - 7 PM."); }
 		 */
-		//initialization();
+		// initialization();
 		System.out.println("Task 7");
 		amazonHomePage = new AmazonHomePage();
 		amazonLoginPage = new AmazonLoginPage();
 		amazonSearchProductsPage = new AmazonSearchProductsPage();
 		amazonGoToCartPage = new AmazonGoToCartPage();
-		
+
 	}
 
 	@Test(priority = 0)
@@ -63,14 +47,14 @@ public class Task7AmazonAddProductVerify extends TestBase {
 		Assert.assertTrue(username.matches("^[a-zA-Z0-9]+$"), "Username must not have special characters");
 		Assert.assertEquals(username.length(), 10, "Username must be 10 characters long");
 		System.out.println("user name Verified");
-		driver.findElement(By.xpath("//*[@id='a-popover-1']/div/header/button")).click();
+		// driver.findElement(By.xpath("//*[@id='a-popover-1']/div/header/button")).click();
 
 	}
 
 	@Test(priority = 1)
-	public void addProductsAndVerifyPrice() throws InterruptedException {
+	public void addProductsAndVerifyPrice() throws InterruptedException, TimeoutException {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		Thread.sleep(2000);
 		String[] productKeywords = { "laptop bag", "bottle", "running shoes", "notebook" };
 		for (String keyword : productKeywords) {
@@ -81,12 +65,11 @@ public class Task7AmazonAddProductVerify extends TestBase {
 			amazonSearchProductsPage.addToCart();
 		}
 		Thread.sleep(2000);
-		driver.getCurrentUrl();
+		driver.get(driver.getCurrentUrl());
 		amazonGoToCartPage.goToCart();
 		double totalPrice = amazonGoToCartPage.calculateTotalCartPrice();
 		Assert.assertTrue(totalPrice > 2000.0, "Total cart price must be more than ₹2000");
-		amazonGoToCartPage.goToCart();
+		amazonGoToCartPage.clearCart();
 	}
-	
 
 }
